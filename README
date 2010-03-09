@@ -1,5 +1,5 @@
 Cabinet is a very-thin layer other berkeley db. It serializes python objects to json using simplejson and then saves them to a bsddb backend.
-The library is really simple (at the moment it's less than 30 loc!) so don't hesitate to modify it and send me back patches!
+The library is really simple (at the moment it's less than 100 loc!) so don't hesitate to modify it and send me back patches!
 
 Example session
 ================

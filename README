@@ -1,4 +1,4 @@
-Cabinet is a very-thin layer other berkeley db. It serializes python objects to json using simplejson and then saves them to a bsddb backend.
+Cabinet is a very-thin layer over berkeley db. It serializes python objects to json using simplejson and then saves them to a bsddb backend.
 The library is really simple so don't hesitate to modify it and send me back patches!
 
 Example session

@@ -27,6 +27,12 @@ class Cabinet(object):
     def __delitem__(self, key):
         del self.db[key]
 
+    def __contains__(self, key):
+        if self.cache.has_key(key):
+            return True
+        else:
+            return False
+
     def sync(self):
         for key in self.cache:
             self.db[key] = json.dumps(self.cache[key])

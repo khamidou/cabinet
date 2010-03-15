@@ -8,9 +8,10 @@ except ImportError:
 
 
 class Cabinet(object):
-    def __init__(self, filename, *args):
+    def __init__(self, filename, Encoder=json.JSONEncoder, *args):
         self.db = bsddb.hashopen(filename)
         self.cache = {}
+        self.encoder = Encoder
 
     def __getitem__(self, key):
         if self.cache.has_key(key):
@@ -35,6 +36,6 @@ class Cabinet(object):
 
     def sync(self):
         for key in self.cache:
-            self.db[key] = json.dumps(self.cache[key])
+            self.db[key] = json.dumps(self.cache[key], cls=self.encoder)
 
         self.db.sync()
